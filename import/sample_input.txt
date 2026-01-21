@@ -1,0 +1,12 @@
+# Instructions:
+# 1. Specify the mode: 'cost' or 'delivery'
+# 2. Enter base_delivery_cost and no_of_packages (e.g., '100 3')
+# 3. Enter package details: pkg_id weight_kg distance_km offer_code (e.g., 'PKG1 50 30 OFR001')
+# 4. If mode is 'delivery', enter vehicle details: no_of_vehicles max_speed max_carriable_weight (e.g., '2 70 200')
+
+delivery
+100 3
+PKG1 50 30 OFR001
+PKG2 75 125 OFR002
+PKG3 175 100 OFR003
+2 70 200
