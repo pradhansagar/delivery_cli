@@ -53,7 +53,25 @@ python -m unittest tests.test_cli_integration.py
 
 ## Project Structure
 
-- `delivery_app/`: Contains the application logic (offers, calculators, etc.).
+- `delivery/`: Contains the application logic (offers, calculators, etc.).
+    - `/cli/`: Command-line interface code.
+    - `/services/`: Contains the core services (cost calculation, delivery planning).
+    - `/models/`: Contains the data models.
 - `main.py`: The entry point script.
 - `tests/`: Unit tests.
 
+## Technical Features
+
+- The application is built using Service-oriented architecture.
+- The application follows a modular structure.
+- The application is designed to be extendable, maintainable with new features easily added.
+- Unit tests are provided for all core services.
+
+## Algorithms applied
+
+- Cost calculation: 
+    - The application calculates the cost based by adding a base fee on the weight of the package, the distance to be covered, and the applicable discount offers.
+    - A discount is only applied if the package's weight and distance fall strictly within the minimum and maximum ranges defined for that specific promo code
+- Delivery planning: 
+    - The application utilises a recursive backtracking algorithm to find the optimal shipment plan for V number of vehicles.
+    - Vehicle scheduling - When a vehicle delivers a batch, it remains unavailable for `2 * (MaxDistance / Speed)`. The next available batch is assigned to the vehicle with the earliest return timestamp.
