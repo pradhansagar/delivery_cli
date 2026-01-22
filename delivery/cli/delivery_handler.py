@@ -53,4 +53,4 @@ def handle_delivery_mode(provider: InputProvider) -> None:
 
     packages.sort(key=lambda p: p.package_no)
     for package in packages:
-        print(f"{package.package_no} {package.discount_percent} {package.total_cost} {package.delivery_time}")
+        print(f"Package {package.package_no} will be delivered in {package.delivery_time} hours, the total cost is {package.total_cost} and discount amount is {package.discount_amount}")
