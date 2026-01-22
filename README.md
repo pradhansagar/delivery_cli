@@ -5,7 +5,7 @@ A simple command-line application to calculate delivery costs and plan shipments
 ## Features
 
 - **Cost Calculation**: Calculate total delivery cost based on weight, distance, and applicable discount offers.
-- **Delivery Planning**: Plan shipments for a fleet of vehicles based on max weight and speed.
+- **Delivery Planning**: Plan shipments for V number of vehicles based on max weight and speed.
 
 ## Prerequisites
 

@@ -2,7 +2,8 @@ import unittest
 import os
 from io import StringIO
 from unittest.mock import patch
-from delivery.cli import run_app, FileInputProvider
+from delivery.cli.app import run_app
+from delivery.cli.input_providers import FileInputProvider
 
 class TestCliIntegration(unittest.TestCase):
     def setUp(self):
@@ -33,15 +34,9 @@ class TestCliIntegration(unittest.TestCase):
     def test_run_app_delivery_mode_from_sample_file(self, mock_stdout):
         print("\n--- Test: CLI Integration - Delivery Mode (from Sample File) ---")
         
-        # Read and filter lines from sample file, similar to main.py
-        with open(self.sample_file_path, 'r') as f:
-            lines = [
-                line.strip() 
-                for line in f.readlines() 
-                if line.strip() and not line.strip().startswith("#") and not line.strip().startswith("//")
-            ]
+        # Use the static factory method directly
+        provider = FileInputProvider.from_file(self.sample_file_path)
             
-        provider = FileInputProvider(lines)
         run_app(provider)
         output = mock_stdout.getvalue()
         print("Output:\n", output)

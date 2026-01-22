@@ -1,7 +1,4 @@
-def main() -> None:
-    from delivery.cli import main as cli_main
-    cli_main()
-
+from delivery.cli.app import main
 
 if __name__ == "__main__":
     main()
